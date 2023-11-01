@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" ?>
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+
+		<policyNamespaces>
+				<target prefix="Dell" namespace="Dell.Policies" />
+		</policyNamespaces>
+
+		<resources minRequiredRevision="1.0" fallbackCulture="en-us" />
+
+		<supportedOn><definitions><definition name="SupportedOn" displayName="$(string.String_SupportedOn)" /></definitions></supportedOn>
+
+		<categories>
+				<category name="Dell" displayName="$(string.Dell)"/>
+				<category name="DCU" displayName="$(string.DCU)"><parentCategory ref="Dell:Dell" /></category>
+				<category name="DCU_AdvancedDriverRestore" displayName="$(string.DCU_AdvancedDriverRestore)"><parentCategory ref="DCU" /></category>
+				<category name="DCU_BIOS" displayName="$(string.DCU_BIOS)"><parentCategory ref="DCU" /></category>
+				<category name="DCU_General" displayName="$(string.DCU_General)"><parentCategory ref="DCU" /></category>
+				<category name="DCU_UpdateFilter" displayName="$(string.DCU_UpdateFilter)"><parentCategory ref="DCU" /></category>
+				<category name="DCU_UpdateSettings" displayName="$(string.DCU_UpdateSettings)"><parentCategory ref="DCU" /></category>
+				<category name="DCU_UserInterface" displayName="$(string.DCU_UserInterface)"><parentCategory ref="DCU" /></category>
+		</categories>
+
+		<policies>
+
+				<policy name="DCU_AdvancedDriverRestore" class="Machine" displayName="$(string.DCU_AdvancedDriverRestore)" explainText="$(string.DCU_AdvancedDriverRestore_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\AdvancedDriverRestore" presentation="$(presentation.DCU_AdvancedDriverRestore)">
+						<parentCategory ref="DCU_AdvancedDriverRestore" />
+						<supportedOn ref="SupportedOn" />
+						<elements>
+								<boolean id="chkEnableAdvancedRestore" valueName="IsAdvancedDriverRestoreEnabled">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkUseCustomLibrary" valueName="IsCabSourceDell">
+										<trueValue><decimal value="0" /></trueValue>
+										<falseValue><decimal value="1" /></falseValue>
+								</boolean>
+								<text id="txtLibraryLocation" valueName="CabPath" />
+						</elements>
+				</policy>
+
+				<policy name="DCU_BIOS_SuspendBitLocker" class="Machine" displayName="$(string.DCU_BIOS_SuspendBitLocker)" explainText="$(string.DCU_BIOS_SuspendBitLocker_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\General" valueName="SuspendBitLocker">
+						<parentCategory ref="DCU_BIOS" />
+						<supportedOn ref="SupportedOn" />
+						<enabledValue><decimal value="1" /></enabledValue>
+						<disabledValue><decimal value="0" /></disabledValue>
+				</policy>
+
+				<policy name="DCU_General_DownloadFileLocation" class="Machine" displayName="$(string.DCU_General_DownloadFileLocation)" explainText="$(string.DCU_General_DownloadFileLocation_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\General" presentation="$(presentation.DCU_General_DownloadFileLocation)">
+						<parentCategory ref="DCU_General" />
+						<supportedOn ref="SupportedOn" />
+						<elements><text id="txtDownloadFileLocation" valueName="DownloadPath" /></elements>
+				</policy>
+
+				<policy name="DCU_General_UpdateSourceLocation" class="Machine" displayName="$(string.DCU_General_UpdateSourceLocation)" explainText="$(string.DCU_General_UpdateSourceLocation_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\General" presentation="$(presentation.DCU_General_UpdateSourceLocation)">
+						<parentCategory ref="DCU_General" />
+						<supportedOn ref="SupportedOn" />
+						<elements>
+								<multiText id="txtUpdateSourceLocation" valueName="CustomCatalogPaths" maxStrings="1" />
+								<boolean id="chkDefaultSource" valueName="EnableDefaultDellCatalog">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+						</elements>
+				</policy>
+
+				<policy name="DCU_General_InternetProxy" class="Machine" displayName="$(string.DCU_General_InternetProxy)" explainText="$(string.DCU_General_InternetProxy_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\General\CustomProxySettings" presentation="$(presentation.DCU_General_InternetProxy)">
+						<parentCategory ref="DCU_General" />
+						<supportedOn ref="SupportedOn" />
+						<elements>
+								<boolean id="chkUseCustomProxy" valueName="UseDefaultProxy">
+										<trueValue><decimal value="0" /></trueValue>
+										<falseValue><decimal value="1" /></falseValue>
+								</boolean>
+								<text id="txtProxyServer" valueName="Server" />
+								<decimal id="txtProxyPort" valueName="Port" />
+								<boolean id="chkUseProxyAuthentication" valueName="UseAuthentication">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<text id="txtProxyUsername" valueName="Username" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\General\CustomProxySettings\ProxyAuthentication"/>
+								<text id="txtProxyPassword" valueName="Password" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\General\CustomProxySettings\ProxyAuthentication"/>
+						</elements>
+				</policy>
+
+				<policy name="DCU_General_UserConsent" class="Machine" displayName="$(string.DCU_General_UserConsent)" explainText="$(string.DCU_General_UserConsent_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\General" valueName="UserConsent">
+						<parentCategory ref="DCU_General" />
+						<supportedOn ref="SupportedOn" />
+						<enabledValue><decimal value="1" /></enabledValue>
+						<disabledValue><decimal value="0" /></disabledValue>
+				</policy>
+
+				<policy name="DCU_UpdateFiter_DeviceCategory" class="Machine" displayName="$(string.DCU_UpdateFilter_DeviceCategory)" explainText="$(string.DCU_UpdateFilter_DeviceCategory_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\UpdateFilter\DeviceCategory" presentation="$(presentation.DCU_UpdateFilter_DeviceCategory)">
+						<parentCategory ref="DCU_UpdateFilter" />
+						<supportedOn ref="SupportedOn" />
+						<elements>
+								<boolean id="chkAudio" valueName="IsAudioSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkChipset" valueName="IsChipsetSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkInput" valueName="IsInputSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkNetwork" valueName="IsNetworkSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkStorage" valueName="IsStorageSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkVideo" valueName="IsVideoSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkDeviceOther" valueName="IsDeviceCategoryOtherSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+						</elements>
+				</policy>
+
+				<policy name="DCU_UpdateFiter_RecommendationLevel" class="Machine" displayName="$(string.DCU_UpdateFilter_RecommendationLevel)" explainText="$(string.DCU_UpdateFilter_RecommendationLevel_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\UpdateFilter\RecommendedLevel" presentation="$(presentation.DCU_UpdateFilter_RecommendationLevel)">
+						<parentCategory ref="DCU_UpdateFilter" />
+						<supportedOn ref="SupportedOn" />
+						<elements>
+								<boolean id="chkSecurity" valueName="IsSecurityUpdatesSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkCritical" valueName="IsCriticalUpdatesSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkRecommended" valueName="IsRecommendedUpdatesSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkOptional" valueName="IsOptionalUpdatesSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+						</elements>
+				</policy>
+
+				<policy name="DCU_UpdateFiter_UpdateType" class="Machine" displayName="$(string.DCU_UpdateFilter_UpdateType)" explainText="$(string.DCU_UpdateFilter_UpdateType_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\UpdateFilter\UpdateType" presentation="$(presentation.DCU_UpdateFilter_UpdateType)">
+						<parentCategory ref="DCU_UpdateFilter" />
+						<supportedOn ref="SupportedOn" />
+						<elements>
+								<boolean id="chkDrivers" valueName="IsDriverSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkApplications" valueName="IsApplicationSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkBios" valueName="IsBiosSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkFirmware" valueName="IsFirmwareSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkUtility" valueName="IsUtilitySelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+								<boolean id="chkTypeOther" valueName="IsUpdateTypeOtherSelected">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+						</elements>
+				</policy>
+
+				<policy name="DCU_UpdateSettings_Action" class="Machine" displayName="$(string.DCU_UpdateSettings_Action)" explainText="$(string.DCU_UpdateSettings_Action_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\Schedule" presentation="$(presentation.DCU_UpdateSettings_Action)">
+						<parentCategory ref="DCU_UpdateSettings" />
+						<supportedOn ref="SupportedOn" />
+						<elements>
+								<enum id="lstUpdateAction" valueName="AutomationMode" required="true">
+										<item displayName="$(string.DCU_UpdateSettings_Action_NotifyOnly)"><value><string>ScanNotify</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_Action_DownloadNotify)"><value><string>ScanDownloadNotify</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_Action_DownloadInstall)"><value><string>ScanDownloadApplyNotify</string></value></item>
+								</enum>
+								<boolean id="chkDisableNotify" valueName="DisableNotification">
+										<trueValue><decimal value="1" /></trueValue>
+										<falseValue><decimal value="0" /></falseValue>
+								</boolean>
+						</elements>
+				</policy>
+
+				<policy name="DCU_UpdateSettings_UpdateSchedule" class="Machine" displayName="$(string.DCU_UpdateSettings_UpdateSchedule)" explainText="$(string.DCU_UpdateSettings_UpdateSchedule_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\Schedule" presentation="$(presentation.DCU_UpdateSettings_UpdateSchedule)">
+						<parentCategory ref="DCU_UpdateSettings" />
+						<supportedOn ref="SupportedOn" />
+						<elements>
+								<enum id="lstUpdateScheduleMode" valueName="ScheduleMode" required="true">
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleMode_Manual)"><value><string>ManualUpdates</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleMode_Automatic)"><value><string>Auto</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleMode_Daily)"><value><string>Daily</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleMode_Weekly)"><value><string>Weekly</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleMode_Monthly)"><value><string>Monthly</string></value></item>
+								</enum>
+								<enum id="lstUpdateScheduleTime" valueName="Time" required="true">
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_00)"><value><string>2000-01-01T00:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_01)"><value><string>2000-01-01T01:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_02)"><value><string>2000-01-01T02:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_02)"><value><string>2000-01-01T03:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_04)"><value><string>2000-01-01T04:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_05)"><value><string>2000-01-01T05:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_06)"><value><string>2000-01-01T06:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_07)"><value><string>2000-01-01T07:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_08)"><value><string>2000-01-01T08:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_09)"><value><string>2000-01-01T09:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_10)"><value><string>2000-01-01T10:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_11)"><value><string>2000-01-01T11:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_12)"><value><string>2000-01-01T12:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_13)"><value><string>2000-01-01T13:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_14)"><value><string>2000-01-01T14:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_15)"><value><string>2000-01-01T15:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_16)"><value><string>2000-01-01T16:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_17)"><value><string>2000-01-01T17:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_18)"><value><string>2000-01-01T18:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_19)"><value><string>2000-01-01T19:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_20)"><value><string>2000-01-01T20:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_21)"><value><string>2000-01-01T21:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_22)"><value><string>2000-01-01T22:00:00</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateSchedule_Time_23)"><value><string>2000-01-01T23:00:00</string></value></item>
+								</enum>
+								<enum id="lstUpdateScheduleDay" valueName="DayOfWeek" required="true">
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDay_Monday)"><value><string>Monday</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDay_Tuesday)"><value><string>Tuesday</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDay_Wednesday)"><value><string>Wednesday</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDay_Thursday)"><value><string>Thursday</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDay_Friday)"><value><string>Friday</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDay_Saturday)"><value><string>Saturday</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDay_Sunday)"><value><string>Sunday</string></value></item>
+								</enum>
+								<enum id="lstUpdateScheduleDate" valueName="DayOfMonth" required="true">
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_01)"><value><string>1</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_02)"><value><string>2</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_03)"><value><string>3</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_04)"><value><string>4</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_05)"><value><string>5</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_06)"><value><string>6</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_07)"><value><string>7</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_08)"><value><string>8</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_09)"><value><string>9</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_10)"><value><string>10</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_11)"><value><string>11</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_12)"><value><string>12</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_13)"><value><string>13</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_14)"><value><string>14</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_15)"><value><string>15</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_16)"><value><string>16</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_17)"><value><string>17</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_18)"><value><string>18</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_19)"><value><string>19</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_20)"><value><string>20</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_21)"><value><string>21</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_22)"><value><string>22</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_23)"><value><string>23</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_24)"><value><string>24</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_25)"><value><string>25</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_26)"><value><string>26</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_27)"><value><string>27</string></value></item>
+										<item displayName="$(string.DCU_UpdateSettings_UpdateScheduleDate_28)"><value><string>28</string></value></item>
+								</enum>
+						</elements>
+				</policy>
+
+				<policy name="DCU_UserInterface_LockSettings" class="Machine" displayName="$(string.DCU_UserInterface_LockSettings)" explainText="$(string.DCU_UserInterface_LockSettings_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\CFG" valueName="LockSettings">
+						<parentCategory ref="DCU_UserInterface" />
+						<supportedOn ref="SupportedOn" />
+						<enabledValue><decimal value="1" /></enabledValue>
+						<disabledValue><decimal value="0" /></disabledValue>
+				</policy>
+
+				<policy name="DCU_UserInterface_ShowPopup" class="Machine" displayName="$(string.DCU_UserInterface_ShowPopup)" explainText="$(string.DCU_UserInterface_ShowPopup_Help)" key="SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\CFG" valueName="ShowSetupPopup">
+						<parentCategory ref="DCU_UserInterface" />
+						<supportedOn ref="SupportedOn" />
+						<enabledValue><decimal value="1" /></enabledValue>
+						<disabledValue><decimal value="0" /></disabledValue>
+				</policy>
+
+		</policies>
+
+</policyDefinitions>

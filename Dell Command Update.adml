@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" ?>
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+
+	<displayName>Dell Command|Update ADML File</displayName>
+
+	<description>English Language resource file for Dell Command|Update policy template</description>
+
+	<resources>
+
+		<stringTable>
+
+			<!-- Requirements -->
+			<string id="String_SupportedOn">At least Windows 10</string>
+
+			<!-- Categories -->
+			<string id="Dell">Dell</string>
+			<string id="DCU">Command|Update</string>
+			<string id="DCU_AdvancedDriverRestore">Advanced Driver Restore</string>
+			<string id="DCU_BIOS">BIOS</string>
+			<string id="DCU_General">General</string>
+			<string id="DCU_UpdateFilter">Update Filter</string>
+			<string id="DCU_UpdateSettings">Update Settings</string>
+			<string id="DCU_UserInterface">User Interface</string>
+
+			<!-- Advanced Driver Restore Policies -->
+			<!-- Uses DCU_AdvancedDriverRestore string -->
+
+			<!-- BIOS Policies -->
+			<string id="DCU_BIOS_SuspendBitLocker">Suspend BitLocker</string>
+
+			<!-- General Policies -->
+			<string id="DCU_General_DefaultSourceLocation">Default Source Location</string>
+			<string id="DCU_General_DownloadFileLocation">Download File Location</string>
+			<string id="DCU_General_InternetProxy">Internet Proxy</string>
+			<string id="DCU_General_UpdateSourceLocation">Update Source Location</string>
+			<string id="DCU_General_UserConsent">User Consent</string>
+
+			<!-- Update Filter Policies -->
+			<string id="DCU_UpdateFilter_DeviceCategory">Device Category</string>
+			<string id="DCU_UpdateFilter_RecommendationLevel">Recommendation Level</string>
+			<string id="DCU_UpdateFilter_UpdateType">Update Type</string>
+
+			<!-- Update Settings Policies -->
+			<string id="DCU_UpdateSettings_Action">When updates are found</string>
+			<string id="DCU_UpdateSettings_Action_NotifyOnly">Notify only</string>
+			<string id="DCU_UpdateSettings_Action_DownloadNotify">Download and notify</string>
+			<string id="DCU_UpdateSettings_Action_DownloadInstall">Download, install and notify</string>
+
+			<string id="DCU_UpdateSettings_UpdateSchedule">Check For Updates</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleMode_Manual">Manual</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleMode_Automatic">Automatic</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleMode_Daily">Daily</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleMode_Weekly">Weekly</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleMode_Monthly">Monthly</string>
+
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_00">00:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_01">01:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_02">02:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_03">03:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_04">04:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_05">05:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_06">06:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_07">07:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_08">08:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_09">09:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_10">10:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_11">11:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_12">12:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_13">13:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_14">14:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_15">15:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_16">16:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_17">17:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_18">18:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_19">19:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_20">20:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_21">21:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_22">22:00</string>
+			<string id="DCU_UpdateSettings_UpdateSchedule_Time_23">23:00</string>
+
+			<string id="DCU_UpdateSettings_UpdateScheduleDay_Monday">Monday</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDay_Tuesday">Tuesday</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDay_Wednesday">Wednesday</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDay_Thursday">Thursday</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDay_Friday">Friday</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDay_Saturday">Saturday</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDay_Sunday">Sunday</string>
+
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_01">01</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_02">02</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_03">03</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_04">04</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_05">05</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_06">06</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_07">07</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_08">08</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_09">09</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_10">10</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_11">11</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_12">12</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_13">13</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_14">14</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_15">15</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_16">16</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_17">17</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_18">18</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_19">19</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_20">20</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_21">21</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_22">22</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_23">23</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_24">24</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_25">25</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_26">26</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_27">27</string>
+			<string id="DCU_UpdateSettings_UpdateScheduleDate_28">28</string>
+
+			<!-- User Interface Policies -->
+			<string id="DCU_UserInterface_LockSettings">Lock Settings</string>
+			<string id="DCU_UserInterface_ShowPopup">Show Popup</string>
+
+			<!-- Advanced Driver Restore Help Text -->
+			<string id="DCU_AdvancedDriverRestore_Help">Advanced Driver Restore.
+
+Enable/disable Advanced Driver Restore.
+If not configured the default value is enabled.</string>
+
+			<!-- BIOS Help Text -->
+			<string id="DCU_BIOS_SuspendBitLocker_Help">Suspend BitLocker.
+
+Enable/disable Bitlocker suspension during BIOS updates.
+If not configured the default value is enabled (suspend).</string>
+
+			<!-- General Help Text -->
+			<string id="DCU_General_DefaultSourceLocation_Help">Default source location.
+
+Specify if the default update source (dell.com) should be used in addition to alternate locations.
+If not configured the default value is enabled.</string>
+
+			<string id="DCU_General_DownloadFileLocation_Help">Path to download location.
+
+Specify where update files are stored locally.
+If not configured the default value is used (c:\programdata\dell\updateservice\downloads).</string>
+
+			<string id="DCU_General_InternetProxy_Help">Internet proxy.
+
+Specify custom proxy settings.</string>
+
+			<string id="DCU_General_UpdateSourceLocation_Help">Update Source Location.
+
+Specify alternate update source location.
+If not configured the default value is used (dell.com).</string>
+
+			<string id="DCU_General_UserConsent_Help">User Consent.
+
+Agree to allow Dell to collect and use information gathered for the purpose of improving its products and services.
+If not configured the default value is disabled.</string>
+
+			<!-- Update Filter Help Text -->
+			<string id="DCU_UpdateFilter_DeviceCategory_Help">Device Category.
+
+Select which devices to update.
+If not configured the default value is enabled for all devices.</string>
+
+			<string id="DCU_UpdateFilter_RecommendationLevel_Help">Recommendation Level.
+
+Select which level of updates to install.
+If not configured the default value is enabled for all levels.</string>
+
+			<string id="DCU_UpdateFilter_UpdateType_Help">Update Type.
+
+Select which type of updates to install.
+If not configured the default value is enabled for all updates</string>
+
+			<!-- Update Settings Help Text -->
+			<string id="DCU_UpdateSettings_Action_Help">When updates are found.
+
+Select what should happen when updates are found.
+If not configured the default value is Notify only (when updates are available).</string>
+
+			<string id="DCU_UpdateSettings_UpdateSchedule_Help">Check for updates.
+
+Select how to check for updates.
+If not configured the default value is Automatic (daily).</string>
+
+			<!-- User Interface Help Text -->
+			<string id="DCU_UserInterface_LockSettings_Help">Lock Settings.
+
+Lock/unlock application settings.
+If not configured the default value is disabled (unlocked).</string>
+
+			<string id="DCU_UserInterface_ShowPopup_Help">Show Popup.
+
+Enable/disable first time popup.
+If not configured the default value is enabled (show).</string>
+
+		</stringTable>
+
+		<presentationTable>
+
+			<!-- Advanced Driver Restore Presentation -->
+			<presentation id="DCU_AdvancedDriverRestore">
+				<checkBox refId="chkEnableAdvancedRestore" defaultChecked="true">Enable Advanced Restore</checkBox>
+				<checkBox refId="chkUseCustomLibrary" defaultChecked="false">Use the specified driver library</checkBox>
+				<textBox refId="txtLibraryLocation"><label /></textBox>
+			</presentation>
+
+			<!-- BIOS Presentation -->
+			<!-- DCU_BIOS_SuspendBitLocker presentation not required -->
+
+			<!-- General Presentation -->
+			<presentation id="DCU_General_DownloadFileLocation"><textBox refId="txtDownloadFileLocation"><label>Download File Location</label></textBox></presentation>
+			<presentation id="DCU_General_UpdateSourceLocation">
+				<multiTextBox refId="txtUpdateSourceLocation">Update Source Locations</multiTextBox>
+				<checkBox refId="chkDefaultSource" defaultChecked="false">Default Source Location (dell.com)</checkBox>
+			</presentation>
+
+			<!-- DCU_General_DefaultSourceLocation not required -->
+
+			<!-- Internet Proxy Presentation -->
+			<presentation id="DCU_General_InternetProxy">
+				<checkBox refId="chkUseCustomProxy" defaultChecked="false">Use custom proxy </checkBox>
+				<textBox refId="txtProxyServer"><label>Proxy Server</label></textBox>
+				<decimalTextBox refId="txtProxyPort" spin="false">Proxy Port</decimalTextBox>
+				<checkBox refId="chkUseProxyAuthentication" defaultChecked="false">Use proxy authentication</checkBox>
+				<textBox refId="txtProxyUsername"><label>Username</label></textBox>
+				<textBox refId="txtProxyPassword"><label>Password</label></textBox>
+			</presentation>
+
+			<!-- DCU_General_UserConsent presentation not required -->
+
+			<!-- Update Filter Presentation -->
+			<presentation id="DCU_UpdateFilter_DeviceCategory">
+				<checkBox refId="chkAudio" defaultChecked="true">Audio</checkBox>
+				<checkBox refId="chkChipset" defaultChecked="true">Chipset</checkBox>
+				<checkBox refId="chkInput" defaultChecked="true">Input (e.g. Mouse, Keyboard)</checkBox>
+				<checkBox refId="chkNetwork" defaultChecked="true">Network and Bluetooth</checkBox>
+				<checkBox refId="chkStorage" defaultChecked="true">Storage (e.g. Hard drive, CD/DVD)</checkBox>
+				<checkBox refId="chkVideo" defaultChecked="true">Video</checkBox>
+				<checkBox refId="chkDeviceOther" defaultChecked="true">All Others</checkBox>
+			</presentation>
+			<presentation id="DCU_UpdateFilter_RecommendationLevel">
+				<checkBox refId="chkSecurity" defaultChecked="true">Security Updates</checkBox>
+				<checkBox refId="chkCritical" defaultChecked="true">Critical Updates</checkBox>
+				<checkBox refId="chkRecommended" defaultChecked="true">Recommended Updates</checkBox>
+				<checkBox refId="chkOptional" defaultChecked="true">Optional Updates</checkBox>
+			</presentation>
+			<presentation id="DCU_UpdateFilter_UpdateType">
+				<checkBox refId="chkDrivers" defaultChecked="true">Hardware Drivers</checkBox>
+				<checkBox refId="chkApplications" defaultChecked="true">Application Software (e.g. Command|Update)</checkBox>
+				<checkBox refId="chkBios" defaultChecked="true">BIOS Updates</checkBox>
+				<checkBox refId="chkFirmware" defaultChecked="true">Firmware Updates</checkBox>
+				<checkBox refId="chkUtility" defaultChecked="true">Utility Software</checkBox>
+				<checkBox refId="chkTypeOther" defaultChecked="true">All Others</checkBox>
+			</presentation>
+
+			<!-- Update Settings Presentation -->
+			<presentation id="DCU_UpdateSettings_Action">
+				<dropdownList refId="lstUpdateAction" noSort="true">When updates are found</dropdownList>
+				<checkBox refId="chkDisableNotify">Disable Notifications</checkBox>
+			</presentation>
+			<presentation id="DCU_UpdateSettings_UpdateSchedule">
+				<dropdownList refId="lstUpdateScheduleMode" noSort="true">Check for updates</dropdownList>
+				<dropdownList refId="lstUpdateScheduleTime">Select the time</dropdownList>
+				<dropdownList refId="lstUpdateScheduleDay" noSort="true">Select the day (weekly)</dropdownList>
+				<dropdownList refId="lstUpdateScheduleDate">Select the day (monthly)</dropdownList>
+			</presentation>
+
+			<!-- DCU_UserInterface_LockSettings presentation not required -->
+
+			<!-- DCU_UserInterface_ShowPopup presentation not required -->
+
+		</presentationTable>
+
+	</resources>
+
+</policyDefinitionResources>
